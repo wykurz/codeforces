@@ -1,0 +1,14 @@
+-std=c++11
+-Wall
+-g
+-Wno-unused-function
+-Wno-unused-variable
+-Wno-sign-compare
+-isystem/nix/store/x45vgz17bapqai2dz1n26727dzp8swzw-libc++-5.0.2/include
+-isystem/nix/store/y6wwzman7fickg4rgwmy8pmqbqpb0fdg-libc++abi-5.0.2/include
+-isystem/nix/store/hnbdsz34a6iniiriikxpl7fp4klishmk-compiler-rt-5.0.2-dev/include
+-isystem/nix/store/l36nqi7grqx0hwp20wnrib0xwdknxc2g-gdb-8.1.1/include
+-isystem/nix/store/4xi66pq3vjl0gny73k7sl6blsacj9a58-gperftools-2.6.3/include
+-isystem/nix/store/x45vgz17bapqai2dz1n26727dzp8swzw-libc++-5.0.2/include/c++/v1
+-isystem/nix/store/rrgi34b72dbdhi0pc5j5lldhrp68hvzz-clang-wrapper-5.0.2/resource-root/include
+-isystem/nix/store/f3l058q0zvnzr7nvl0jj789pyvljqadw-glibc-2.27-dev/include
