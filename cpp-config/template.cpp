@@ -55,16 +55,8 @@ using sstrm = stringstream;
 template<typename S, typename T> inline void chmin(S& a, T b) { if (b < a) a = b; }
 template<typename S, typename T> inline void chmax(S& a, T b) { if (a < b) a = b; }
 
-sstrm testData(R"(4 2)");
-
 int main()
 {
   iostream::sync_with_stdio(false);
-  auto& input = testData; // cin
-  int x, y;
-  input >> x >> y;
-  int n = 7 - max(x, y);
-  int m = 6;
-  FOR(i, 1, 6) if (n % i == 0 && m % i == 0) { n /= i; m /= i; }
-  cout << n << "/" << m << endl;
+  
 }
