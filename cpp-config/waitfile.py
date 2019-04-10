@@ -1,27 +1,22 @@
 import glob
 import os.path as path
+import sys
 import time
 
 
 class Checker:
-    def __init__(self, fname):
-        self._fname = fname
-        self._mtime = path.getmtime(self._fname)
+    def __init__(self, ts, fnames):
+        self._ts = ts
+        self._fnames = fnames
 
     def run(self):
-        mtime = path.getmtime(self._fname)
-        if self._mtime < mtime:
-            self._mtime = mtime
-            return True
-        return False
-
-
-files = glob.glob('*.cpp')
-assert len(files) == 1
-checker = Checker(files[0])
+        return any([self._ts < path.getmtime(fname) for fname in self._fnames])
 
 
 def main():
+    ts = int(sys.argv[1]) / 10**9
+    files = glob.glob('*')
+    checker = Checker(ts, files)
     while True:
         if checker.run():
             return

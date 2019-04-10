@@ -1,22 +1,26 @@
 #!/usr/bin/env bash
 
-function run_make
-{
+function ns_time {
+    date +%s%N
+}
+
+function run_make {
     echo "|+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     echo "Make! "`date '+%X'`
     make contest
 }
 
-function continue
-{
-    if python waitfile.py
+function waitfile {
+    if python waitfile.py $1
     then
        return 0
     fi
     return 1
 }
 
+ts=$(ns_time)
 run_make
-while continue; do
+while waitfile $ts; do
+    ts=$(ns_time)
     run_make
 done
