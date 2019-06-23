@@ -30,6 +30,7 @@ using uint = unsigned int;
 using ll = long long;
 using ull = unsigned long long;
 using sstrm = stringstream;
+using ld = long double;
 
 #define ZERO(a) std::memset((a), 0, sizeof(a))
 #define FILL1D(a, v) std::fill_n(a, sizeof(a) / sizeof(a[0]), v)
@@ -58,5 +59,6 @@ template<typename S, typename T> inline void chmax(S& a, T b) { if (a < b) a = b
 int main()
 {
   iostream::sync_with_stdio(false);
-  
+  cout.precision(17);
+  cout << fixed;
 }
