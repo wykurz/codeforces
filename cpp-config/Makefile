@@ -1,5 +1,7 @@
 CC     = clang++
-CFLAGS = -std=c++11 -Wall -g -Wno-unused-function -Wno-unused-variable -Wno-sign-compare
+CFLAGS = -std=c++17 -Wall -Wextra -Wshadow -O2 -g -Wno-unused-function -Wno-unused-variable -Wno-sign-compare -Wformat=2 -Wfloat-equal \
+         -Wconversion -Wshift-overflow -Wcast-qual -Wcast-align -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=undefined,integer \
+         -fstack-protector -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2
 LFLAGS = -Wl,--no-as-needed -lprofiler -Wl,--as-needed
 SRCS   = $(wildcard *.cpp)
 BINS   = $(patsubst %.cpp, %, $(SRCS))
