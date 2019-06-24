@@ -56,9 +56,25 @@ using ld = long double;
 template<typename S, typename T> inline void chmin(S& a, T b) { if (b < a) a = b; }
 template<typename S, typename T> inline void chmax(S& a, T b) { if (a < b) a = b; }
 
+// debug print, noop when ONLINE_JUDGE is passed
+// usage: debug << foo; ()
+struct debug_t {};
+template<typename T_>
+debug_t& operator<<(debug_t& out_, T_& t_)
+{
+  (void) t_;
+#ifndef ONLINE_JUDGE
+  cerr << t_;
+#endif
+  return out_;
+}
+debug_t debug;
+
 int main()
 {
   iostream::sync_with_stdio(false);
+  cin.tie(nullptr);
   cout.precision(17);
   cout << fixed;
+  debug << "hello!\n";
 }
