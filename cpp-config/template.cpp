@@ -65,11 +65,11 @@ template<typename S, typename T> inline void chmax(S& a, T b) { if (a < b) a = b
 // usage: debug << foo; ()
 struct debug_t {};
 template<typename T_>
-debug_t& operator<<(debug_t& out_, T_& t_)
+debug_t& operator<<(debug_t& out_, T_&& t_)
 {
   (void) t_;
 #ifndef ONLINE_JUDGE
-  cerr << t_;
+  cerr << std::forward<T_>(t_);
 #endif
   return out_;
 }
