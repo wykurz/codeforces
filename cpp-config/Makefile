@@ -22,9 +22,6 @@ clobber :
 
 clean : clobber
 
-upload :
-	cp *.cpp ~/share/
+contest : test clobber
 
-contest : upload test clobber
-
-.PHONY : test clobber clean upload contest
+.PHONY : test clobber clean contest
